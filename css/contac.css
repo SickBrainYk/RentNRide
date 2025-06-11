@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Perubahan warna berdasarkan permintaan Anda sebelumnya */
+    --primary-blue: #007bff;
+    --dark-blue: #0A1C2E;
+    --light-grey: #f8f9fa;
+    --text-color: #333;
+    --white: #ffffff;
+    --teal: #00CED1; /* Warna teal/biru-hijau yang cerah */
+    --dark-teal: #008B8B;
+
+    /* Variabel warna yang disesuaikan untuk layout "Rent N Ride" */
+    --navbar-bg-dark: var(--dark-blue); /* Menggunakan dark-blue sebagai latar belakang navbar */
+    --logo-color: var(--teal); /* Menggunakan teal untuk logo "Rent N Ride" */
+    --nav-link-color: var(--white); /* Menggunakan white untuk tautan navbar */
+    --active-link-color-navbar: var(--teal); /* Menggunakan teal untuk tautan aktif navbar */
+
+    /* Warna untuk latar belakang utama (body) agar sesuai dengan gambar */
+    /* Disesuaikan: menggunakan dark-teal untuk awal gradasi agar lebih gelap */
+    --body-bg-gradient-start: var(--dark-teal); /* Dimulai dengan warna teal yang sedikit lebih gelap */
+    --body-bg-gradient-end: var(--light-grey); /* Tetap light-grey di bagian bawah */
+
+    /* Variabel umum lainnya yang digunakan dalam CSS */
+    --text-dark: var(--text-color); /* Menggunakan text-color */
+    --text-light: var(--text-color); /* Bisa disesuaikan jika ingin warna abu-abu berbeda */
+    --white-bg: var(--white); /* Menggunakan white */
+    --grey-border: #e0e0e0; /* Pertahankan ini jika tidak ada pengganti yang jelas */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    /* Gradasi warna disesuaikan dari atas ke bawah */
+    /* Menggunakan dark-teal di awal gradasi untuk efek lebih gelap */
+    background: linear-gradient(180deg, var(--body-bg-gradient-start) 0%, var(--body-bg-gradient-end) 30%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-dark);
+    /* overflow-x: hidden; */ /* Dihapus untuk membiarkan scroll vertikal, jika ada */
+}
+
+/* Styling untuk Navbar (sesuai Rent N Ride) */
+.navbar.new-navbar-style {
+    width: 100%;
+    padding: 20px 5%; /* Padding horizontal 5% agar ada ruang di pinggir */
+    background-color: var(--navbar-bg-dark); /* Latar belakang gelap */
+    display: flex;
+    justify-content: space-between; /* Logo di kiri, tautan di kanan */
+    align-items: center; /* Pusatkan vertikal */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sedikit bayangan di bawah */
+    position: sticky; /* Membuat navbar tetap di atas saat di-scroll */
+    top: 0;
+    z-index: 100; /* Pastikan di atas konten lain */
+}
+
+.navbar.new-navbar-style .logo-rent-n-ride {
+    font-size: 2.2em; /* Ukuran font lebih besar untuk logo */
+    font-weight: 700; /* Tebal */
+    color: var(--logo-color); /* Warna teal/cyan */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0; /* Pastikan logo tidak menyusut */
+    margin-right: auto; /* Dorong nav-links ke tengah */
+}
+
+.navbar.new-navbar-style .nav-links-rent-n-ride {
+    display: flex; /* Untuk menata tautan secara horizontal */
+    gap: 35px; /* Jarak antar tautan */
+    margin: 0 auto; /* Ini akan memusatkan elemen nav-links dalam ruang yang tersedia */
+}
+
+.navbar.new-navbar-style .nav-links-rent-n-ride a {
+    color: var(--nav-link-color); /* Warna putih off-white */
+    text-decoration: none; /* Hapus garis bawah */
+    font-size: 0.95em; /* Ukuran font tautan */
+    font-weight: 600; /* Sedikit lebih tebal dari normal */
+    transition: color 0.3s ease; /* Transisi warna saat hover */
+    text-transform: uppercase; /* Teks uppercase */
+}
+
+.navbar.new-navbar-style .nav-links-rent-n-ride a:hover {
+    color: var(--active-link-color-navbar); /* Warna teal/cyan saat hover */
+}
+
+.navbar.new-navbar-style .nav-links-rent-n-ride a.active-rent-n-ride {
+    color: var(--active-link-color-navbar); /* Warna teal/cyan untuk tautan aktif */
+}
+
+/* Bagian Hero/Judul ("ABOUT US") */
+.hero-section {
+    width: 100%;
+    max-width: 1200px; /* Lebar maksimal sesuai layout */
+    text-align: center;
+    padding: 80px 20px 40px; /* Padding atas lebih besar, bawah lebih kecil */
+    color: var(--text-dark); /* Warna teks hitam/gelap */
+    z-index: 5; /* Pastikan di atas background */
+}
+
+.hero-section .hero-title {
+    font-size: 3em; /* Ukuran font besar */
+    font-weight: 700;
+    margin-bottom: 5px; /* Sedikit jarak dengan subtitle */
+    color: var(--text-dark); /* Menggunakan warna teks gelap */
+}
+
+.hero-section .hero-subtitle {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--text-light); /* Warna abu-abu untuk subtitle */
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Main Content Wrapper */
+.main-content-wrapper {
+    width: 100%;
+    max-width: 900px; /* Lebar konten utama */
+    background-color: var(--white-bg); /* Latar belakang putih */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px 60px; /* Padding di dalam kotak konten */
+    margin-bottom: 50px; /* Jarak dari bawah halaman */
+    z-index: 5; /* Pastikan di atas background */
+}
+
+.text-block p {
+    font-size: 0.95em;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.contact-card-simple {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #f8f8f8; /* Latar belakang abu-abu terang */
+    border-radius: 10px;
+    border: 1px solid var(--grey-border); /* Border tipis */
+}
+
+.contact-card-simple h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.contact-item-simple {
+    display: flex;
+    align-items: flex-start; /* Menggunakan flex-start untuk align teks multiline */
+    margin-bottom: 15px;
+}
+
+.contact-item-simple i {
+    font-size: 1.2em;
+    color: var(--logo-color); /* Warna teal/cyan untuk ikon */
+    margin-right: 15px;
+    min-width: 20px; /* Agar ikon tidak terlalu mepet */
+    text-align: center;
+}
+
+.contact-item-simple p {
+    font-size: 0.9em;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .navbar.new-navbar-style {
+        padding: 15px 20px;
+    }
+    .navbar.new-navbar-style .nav-links-rent-n-ride {
+        margin: 0; /* Hapus margin auto untuk layar kecil */
+        justify-content: center; /* Pusatkan item jika flex-direction row */
+        gap: 20px; /* Sesuaikan jarak antar item */
+    }
+    .hero-section {
+        padding: 60px 20px 30px;
+    }
+    .hero-section .hero-title {
+        font-size: 2.5em;
+    }
+    .main-content-wrapper {
+        padding: 30px 40px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar.new-navbar-style {
+        flex-direction: column; /* Tumpuk logo dan tautan */
+        align-items: flex-start; /* Sejajarkan ke kiri */
+        padding: 15px 20px;
+    }
+    .navbar.new-navbar-style .logo-rent-n-ride {
+        margin-right: 0; /* Hapus margin auto saat menumpuk */
+        width: 100%;
+        text-align: center; /* Pusatkan logo saat menumpuk */
+    }
+    .navbar.new-navbar-style .nav-links-rent-n-ride {
+        margin-top: 15px;
+        flex-direction: column; /* Tumpuk tautan secara vertikal */
+        gap: 10px;
+        width: 100%;
+        margin: 0; /* Hapus margin auto saat menumpuk */
+        align-items: center; /* Pusatkan tautan saat menumpuk */
+    }
+    .navbar.new-navbar-style .nav-links-rent-n-ride a {
+        padding: 5px 0;
+        text-align: center;
+    }
+    .hero-section .hero-title {
+        font-size: 2em;
+    }
+    .hero-section .hero-subtitle {
+        font-size: 1em;
+    }
+    .main-content-wrapper {
+        padding: 25px 30px;
+    }
+    .contact-card-simple h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 40px 15px 20px;
+    }
+    .hero-section .hero-title {
+        font-size: 1.8em;
+    }
+    .main-content-wrapper {
+        padding: 20px;
+    }
+    .contact-card-simple {
+        padding: 20px;
+    }
+}
+    /* overflow-x: hidden; */ /* Dihapus untuk membiarkan scroll vertikal, jika ada */
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    color: var(--card-background); /* White text for navbar */
+    position: absolute; /* Position at top */
+    top: 0;
+    z-index: 10; /* Above other content */
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.navbar .nav-links a {
+    color: var(--card-background);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
+    color: var(--accent-pink); /* Highlight active/hovered link */
+}
+
+/* Background Shapes (Abstract elements) */
+.background-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px; /* Adjust size */
+    height: 300px; /* Adjust size */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    border-bottom-left-radius: 50%;
+    transform: rotate(15deg) translateY(-50px);
+    z-index: 0;
+}
+
+/* Main Contact Card Wrapper */
+.contact-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Adjust max-width as needed */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px; /* Space from navbar */
+    margin-bottom: 50px; /* Space from bottom */
+    z-index: 1; /* Ensure card is above background shapes */
+}
+
+.contact-card.new-layout {
+    background-color: var(--card-background);
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    display: flex;
+    width: 100%;
+    overflow: hidden; /* Hide anything outside rounded corners */
+}
+
+/* Left Section: Contact Form */
+.contact-form-section.new-form {
+    flex: 1; /* Takes equal space */
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-section .form-header {
+    margin-bottom: 30px;
+}
+
+.contact-form-section .form-header h2 {
+    font-size: 2.2em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.contact-form-section .form-header p {
+    font-size: 0.95em;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.contact-form .input-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-dark);
+    font-size: 0.95em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-light);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 2px rgba(106, 13, 173, 0.2); /* Subtle focus glow */
+}
+
+.contact-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: capitalize; /* "Submit" as in image */
+}
+
+.submit-btn:hover {
+    background-color: #5b0ca3; /* Slightly darker purple on hover */
+    transform: translateY(-2px);
+}
+
+/* Right Section: Contact Info & Illustration */
+.contact-info-section.new-info {
+    flex: 1; /* Takes equal space */
+    background-color: transparent; /* No background color here, it's white from card */
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push illustration to top, social to bottom */
+    position: relative;
+}
+
+.contact-info-section .illustration-area {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px; /* Space between illustration and info */
+}
+
+.contact-info-section .illustration-img {
+    max-width: 80%; /* Adjust size */
+    height: auto;
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center the image */
+}
+
+.contact-info-section .info-details-container {
+    margin-bottom: 40px; /* Space between info and social icons */
+}
+
+.contact-info-section .contact-detail-item {
+    display: flex;
+    align-items: center; /* Center vertically with icon */
+    margin-bottom: 20px;
+}
+
+.contact-info-section .contact-detail-item .icon-box {
+    min-width: 40px;
+    height: 40px;
+    background-color: rgba(106, 13, 173, 0.1); /* Light purple background for icon */
+    border-radius: 50%; /* Circle icons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    color: var(--primary-purple);
+    margin-right: 15px;
+}
+
+.contact-info-section .contact-detail-item .text-content .detail-value {
+    font-size: 0.95em;
+    color: var(--text-dark);
+    margin: 0;
+    font-weight: 500;
+}
+
+.social-media-icons {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    gap: 15px; /* Space between icons */
+    position: absolute;
+    right: 40px; /* Align to the right side of the card */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    padding-left: 20px; /* Space from contact info */
+}
+
+.social-media-icons .social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-purple); /* Light purple background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-purple); /* Dark purple icon color */
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-media-icons .social-icon:hover {
+    background-color: var(--primary-purple);
+    color: var(--card-background);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .navbar .nav-links a {
+        margin-left: 20px;
+    }
+    .contact-card.new-layout {
+        flex-direction: column;
+        width: 90%;
+        margin-top: 100px;
+    }
+    .contact-form-section.new-form,
+    .contact-info-section.new-info {
+        padding: 40px 30px;
+    }
+    .contact-info-section .illustration-area {
+        margin-bottom: 30px;
+    }
+    .social-media-icons {
+        position: static; /* Remove absolute positioning */
+        flex-direction: row; /* Stack horizontally */
+        justify-content: center;
+        margin-top: 30px; /* Space from info */
+        transform: none;
+    }
+    .background-shape {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none; /* Hide nav links for small screens, consider a hamburger menu */
+    }
+    .navbar .logo {
+        width: 100%;
+        text-align: center;
+    }
+    .contact-wrapper {
+        margin-top: 80px;
+    }
+    .contact-form-section .form-header h2 {
+        font-size: 1.8em;
+    }
+    .contact-info-section .illustration-img {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card.new-layout {
+        padding: 0; /* Remove inner card padding, sections handle it */
+    }
+    .contact-form-section.new-form,
+    .contact-info-section.new-info {
+        padding: 30px 20px;
+    }
+    .contact-info-section .illustration-img {
+        max-width: 90%; /* Allow image to be larger on very small screens */
+    }
+}

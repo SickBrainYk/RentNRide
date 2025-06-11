@@ -1,0 +1,455 @@
+/* Import Google Fonts - Pastikan ini ada di bagian paling atas file CSS Anda atau di <head> HTML */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* --- General Body and Font Styles --- */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Primary font for body text */
+    background-color: #f0f2f5; /* Slightly softer light grey background */
+    color: #333;
+    line-height: 1.6; /* Improve readability for body text */
+    -webkit-font-smoothing: antialiased; /* Smoother font rendering on webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Smoother font rendering on macOS */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Heading font */
+    margin: 0;
+    padding: 0;
+    line-height: 1.2; /* Tighter line height for headings */
+    color: #2e363e; /* Darker color for headings */
+}
+
+.main-wrapper {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* --- Header/Navbar Styles --- */
+.header {
+    background-color: #2e363e; /* Dark background */
+    color: #fff;
+    padding: 20px 0; /* Slightly more padding for a bolder header */
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px; /* Slightly wider container */
+    margin: 0 auto;
+    padding: 0 25px; /* More padding on sides */
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px; /* Slightly larger logo */
+    font-weight: 800; /* Bolder logo */
+    letter-spacing: -0.5px; /* Tighter letter spacing for impact */
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-menu ul li {
+    margin-left: 40px; /* Use margin-left for better control and easier last-child removal */
+}
+
+.main-menu ul li:first-child {
+    margin-left: 0; /* Remove margin for the first item */
+}
+
+
+.main-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease; /* Transition all properties for smoother effects */
+    text-transform: uppercase;
+    position: relative; /* Needed for underline effect */
+    padding-bottom: 5px; /* Space for underline */
+}
+
+.main-menu ul li a::after { /* Underline effect on hover */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #00bcd4;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.main-menu ul li a:hover::after,
+.main-menu ul li a.active::after {
+    width: 100%;
+}
+
+.main-menu ul li a:hover,
+.main-menu ul li a.active {
+    color: #00bcd4; /* Teal color for active/hover */
+}
+
+
+/* --- START: User Profile Styles --- */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Increased spacing */
+    color: #fff;
+    font-size: 16px; /* Slightly larger font */
+}
+
+.user-profile .profile-circle {
+    width: 40px; /* Larger profile circle */
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    object-fit: cover;
+    border: 3px solid #00bcd4; /* Thicker teal border */
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.5); /* Subtle glowing effect */
+}
+
+.user-profile .user-greeting {
+    font-weight: 600;
+    white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* Subtle text shadow */
+}
+
+.user-profile .booking-status-link,
+.user-profile .logout-btn {
+    background-color: #00bcd4;
+    color: #fff;
+    padding: 10px 20px; /* More padding for a bolder button */
+    border-radius: 8px; /* Slightly more rounded corners */
+    text-decoration: none;
+    font-weight: 600; /* Bolder text */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    white-space: nowrap;
+    border: none; /* Ensure no default button border */
+    cursor: pointer; /* Indicate it's clickable */
+    font-size: 15px;
+}
+
+.user-profile .booking-status-link:hover,
+.user-profile .logout-btn:hover {
+    background-color: #0099aa; /* Darker teal on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4); /* More prominent shadow on hover */
+}
+/* --- END: User Profile Styles --- */
+
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 650px; /* Slightly taller hero section */
+    background: url('../images/cars_homepage_bg.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding-left: 12%; /* Adjusted padding */
+    box-sizing: border-box;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Stronger text shadow for readability */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)); /* Gradient overlay for more depth */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    max-width: 600px; /* Wider text content for more space */
+}
+
+.hero-content h1 {
+    font-size: 85px; /* Larger, more impactful heading */
+    font-weight: 800; /* Bolder heading */
+    margin-bottom: 15px;
+    line-height: 1.1;
+    color: #00bcd4; /* Teal color for "RENT N RIDE" */
+    text-transform: uppercase; /* Make it uppercase for impact */
+    letter-spacing: -1px; /* Tighter letter spacing */
+}
+
+.hero-content p {
+    font-size: 22px; /* Larger body text */
+    line-height: 1.6;
+    margin-bottom: 45px; /* More space before buttons/stats */
+    color: #e0e0e0; /* Slightly lighter white for readability */
+}
+
+.hero-content .stats {
+    display: flex;
+    gap: 60px; /* More space between stats */
+    margin-top: 40px;
+    padding-top: 20px; /* Add some top padding */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle separator */
+}
+
+.hero-content .stat-item span {
+    font-size: 48px; /* Larger stat numbers */
+    font-weight: 800; /* Bolder stat numbers */
+    color: #00bcd4; /* Teal color for numbers */
+    display: block; /* Ensure span takes full width */
+    margin-bottom: 5px;
+}
+
+.hero-content .stat-item p {
+    font-size: 19px; /* Larger stat descriptions */
+    margin: 0;
+    color: #fff; /* White for better contrast */
+    font-weight: 500;
+}
+
+
+/* --- Info Boxes Section --- */
+.info-boxes-section {
+    background-color: transparent; /* Make background transparent as container will have color */
+    padding: 0;
+    margin-top: -100px; /* Pull the boxes up further */
+    position: relative;
+    z-index: 2;
+}
+
+.info-box-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1300px; /* Match navbar container width */
+    margin: 0 auto;
+    background-color: #00bcd4; /* Teal background for the entire box container */
+    color: #fff;
+    border-radius: 15px; /* More rounded corners */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25); /* Stronger shadow for floating effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+    padding: 5px; /* Small inner padding for the diagonal cut to be visible */
+}
+
+/* This creates the diagonal cut at the top-left corner of the info-box-container */
+/* We'll use a pseudo-element for the cut on the inner container */
+.info-box-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 30px, #00bcd4 30px); /* Adjust angle and size for the cut */
+    z-index: -1;
+    border-radius: 15px; /* Apply border-radius to the pseudo-element too */
+}
+
+
+.info-box {
+    flex: 1;
+    padding: 45px 35px; /* More padding */
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.25); /* Slightly more prominent separator */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    background-color: rgba(0, 188, 212, 0.95); /* Slightly transparent teal to show container background */
+}
+
+.info-box:last-child {
+    border-right: none;
+}
+
+.info-box:hover {
+    background-color: #0099aa; /* Darker teal on hover */
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.info-box i {
+    font-size: 50px; /* Larger icons */
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for icons */
+}
+
+.info-box h3 {
+    font-size: 24px; /* Larger heading for info boxes */
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.info-box p {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.95;
+    color: #f0f0f0; /* Lighter text for contrast */
+}
+
+/* --- Responsive Design (Basic Example) --- */
+@media (max-width: 992px) {
+    .navbar-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .main-menu ul {
+        flex-direction: column;
+        margin-top: 15px;
+        align-items: center;
+    }
+
+    .main-menu ul li {
+        margin: 0 0 10px 0;
+    }
+
+    .user-profile {
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .hero-section {
+        height: 500px;
+        padding-left: 5%;
+        text-align: center;
+        justify-content: center; /* Center content horizontally */
+        align-items: flex-end; /* Align content to bottom */
+        padding-bottom: 100px; /* Add space from bottom */
+    }
+
+    .hero-section::before {
+        background: rgba(0, 0, 0, 0.5); /* Stronger overlay for mobile */
+    }
+
+    .hero-content {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: 55px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .hero-content .stats {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+        padding-top: 15px;
+    }
+
+    .hero-content .stat-item span {
+        font-size: 38px;
+    }
+
+    .hero-content .stat-item p {
+        font-size: 16px;
+    }
+
+    .info-box-container {
+        flex-direction: column;
+        margin-top: -50px; /* Adjust overlap for mobile */
+        border-radius: 10px;
+    }
+
+    .info-box {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 30px 20px;
+    }
+
+    .info-box:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 45px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 0;
+    }
+
+    .logo a {
+        font-size: 22px;
+    }
+
+    .user-profile {
+        flex-wrap: wrap; /* Allow wrapping for small screens */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .user-profile .booking-status-link,
+    .user-profile .logout-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .hero-section {
+        height: 400px;
+        padding-bottom: 80px;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .hero-content .stat-item span {
+        font-size: 30px;
+    }
+
+    .hero-content .stat-item p {
+        font-size: 14px;
+    }
+
+    .info-box {
+        padding: 25px 15px;
+    }
+
+    .info-box i {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .info-box h3 {
+        font-size: 20px;
+    }
+
+    .info-box p {
+        font-size: 13px;
+    }
+}

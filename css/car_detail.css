@@ -1,0 +1,806 @@
+/* General Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Menggunakan font Inter */
+    background-color: #1a1e28; /* Warna background biru gelap kehitaman */
+    color: #f0f0f0; /* Warna teks umum putih terang */
+    line-height: 1.6;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Wrapper for overall content alignment (Full width as requested) */
+.main-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0; /* Menghilangkan padding horizontal dari main-wrapper */
+}
+
+/* Header/Navbar */
+.header {
+    background-color: #1a1e28; /* Warna background navbar sama dengan body */
+    padding: 23px 0;
+    border-bottom: 1px solid #2a303d; /* Border lebih gelap */
+}
+
+.navbar-container {
+    display: flex;
+    /* justify-content: space-between; */ /* HAPUS ini */
+    justify-content: center; /* **TAMBAHKAN ini untuk memusatkan secara keseluruhan** */
+    align-items: center;
+    padding: 0 60px; /* Menambah padding horizontal agar ada sedikit ruang dari tepi, sesuai screenshot */
+    max-width: 1920px; /* Opsional: batasi lebar maksimal navbar */
+    margin: 0 auto;
+    /* **Tambahkan ini untuk mengatur posisi item secara individual** */
+    position: relative; /* **Penting untuk penempatan absolut jika nanti diperlukan** */
+}
+
+.logo {
+    /* **Tambahkan ini untuk posisi logo di kiri** */
+    position: absolute;
+    left: 40px; /* Sesuaikan dengan padding horizontal navbar-container */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2; /* Pastikan logo di atas elemen lain jika bertumpuk */
+}
+
+.logo a {
+    color: #00d0e0; /* Warna biru kehijauan terang untuk logo */
+    font-family: 'Montserrat', sans-serif; /* Menggunakan font Montserrat untuk logo */
+    font-size: 35px;
+    font-weight: 700; /* Lebih tebal */
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.main-menu {
+    /* main-menu sekarang akan menjadi elemen yang dipusatkan */
+    /* Pastikan ul di dalamnya juga flex */
+    flex-grow: 1; /* **Biarkan menu mengisi ruang yang tersedia** */
+    display: flex; /* **Mengaktifkan Flexbox untuk main-menu itu sendiri** */
+    justify-content: center; /* **Memusatkan ul di dalam main-menu** */
+}
+
+.main-menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0; /* **Pastikan margin dan padding ul adalah 0** */
+    padding: 0;
+}
+
+.main-menu ul li {
+    margin: 0 25px; /* **Menyesuaikan jarak antar menu agar lebih seimbang di tengah** */
+}
+
+.main-menu ul li a {
+    text-decoration: none;
+    color: #ccc; /* Warna teks menu abu-abu terang */
+    font-weight: 500; /* Ketebalan font */
+    font-size: 16px;
+    transition: 0.3s ease;
+    text-transform: capitalize; /* Capitalize the first letter */
+}
+
+.main-menu ul li a:hover,
+.main-menu ul li a.active {
+    color: #00d0e0; /* Warna biru kehijauan terang saat hover/aktif */
+}
+
+.user-profile {
+    /* **Tambahkan ini untuk posisi user-profile di kanan** */
+    position: absolute;
+    right: 40px; /* Sesuaikan dengan padding horizontal navbar-container */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 2; /* Pastikan profil di atas elemen lain jika bertumpuk */
+}
+
+.profile-circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 2px solid #00d0e0; /* Warna biru kehijauan terang untuk border profile pic */
+    background-color: #fff; /* Pastikan background putih untuk icon default */
+}
+
+.user-greeting {
+    color: #f0f0f0;
+    font-size: 15px;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.booking-status-link {
+    color: #00d0e0; /* Warna biru kehijauan terang */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.booking-status-link:hover {
+    color: #f0f0f0;
+}
+
+.logout-btn {
+    background-color: #00d0e0; /* Warna biru kehijauan terang */
+    color: #1a1e28; /* Warna teks gelap agar kontras */
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #00aab5; /* Sedikit lebih gelap saat hover */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Menyesuaikan tinggi agar mirip gambar */
+    /* === Perubahan di sini untuk background-image === */
+    background-image: url('../aset/cvc.jpg'); /* GANTI DENGAN NAMA FILE GAMBAR ANDA */
+    background-size: cover; /* Memastikan gambar menutupi seluruh area */
+    background-position: center; /* Memposisikan gambar di tengah */
+    background-repeat: no-repeat; /* Mencegah gambar berulang */
+    /* ================================================= */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay hitam semi-transparan */
+    display: flex;
+    flex-direction: column; /* Untuk menata teks di tengah */
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 65px; /* Lebih besar dari sebelumnya */
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    color: #fff;
+    margin-bottom: 10px; /* Jarak antara judul dan sub-judul */
+}
+.hero-overlay p { /* Menambahkan gaya untuk sub-judul "Temukan mobil impian Anda" */
+    font-size: 24px;
+    color: #f0f0f0;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Brand Filter Section */
+.brand-filter {
+    text-align: center;
+    padding: 30px 0; /* Menambah padding agar ada jarak vertikal, seperti di gambar */
+    background-color: #fff; /* Warna background putih */
+    border-bottom: none; /* Hilangkan border bawah */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sedikit shadow */
+}
+
+.filter-title {
+    font-size: 18px;
+    color: #333; /* Warna teks lebih gelap */
+    margin-bottom: 15px;
+    display: block;
+}
+
+.brands {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Menambah jarak antar logo */
+    margin-top: 15px;
+    flex-wrap: wrap;
+    padding: 0 40px; /* Padding agar ada ruang di sisi kiri/kanan, sesuai gambar */
+}
+
+.brand-logo {
+    width: 100px; /* Menyesuaikan ukuran logo */
+    height: 60px;
+    object-fit: contain;
+    filter: none; /* Hilangkan grayscale */
+    opacity: 0.8; /* Sedikit transparan */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.brand-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+
+/* Vehicle Group Selection */
+.vehicle-group-selection {
+    padding: 50px 0; /* Menambah padding vertikal */
+    text-align: center;
+    background-color: #1a1e28; /* Warna background sama dengan body */
+    margin-bottom: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.vehicle-group-selection h2 {
+    font-size: 36px; /* Ukuran font lebih besar */
+    margin-bottom: 40px; /* Jarak lebih besar dari tombol */
+    color: #f0f0f0;
+    font-weight: 600;
+}
+
+.vehicle-filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Jarak antar tombol */
+    flex-wrap: wrap;
+    padding: 0 40px; /* Padding agar ada ruang di sisi kiri/kanan */
+}
+
+.vehicle-filters .filter-button {
+    background-color: #2a303d; /* Warna background tombol default */
+    color: #f0f0f0;
+    border: none;
+    padding: 12px 30px; /* Padding tombol lebih besar */
+    border-radius: 5px; /* Sudut tombol lebih tajam */
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-weight: 500;
+}
+
+.vehicle-filters .filter-button:hover {
+    background-color: #00d0e0; /* Warna biru kehijauan saat hover */
+    color: #1a1e28; /* Warna teks gelap */
+}
+
+.vehicle-filters .filter-button.active {
+    background-color: #00d0e0; /* Warna biru kehijauan saat aktif */
+    color: #1a1e28;
+    box-shadow: 0 4px 8px rgba(0,208,224,0.3);
+}
+
+
+/* Section Titles (untuk "OUR CARS OVERVIEW", "SPECIAL CAR", "Facts in Numbers") */
+.section-title {
+    text-align: center;
+    font-size: 40px; /* Lebih besar */
+    color: #f0f0f0;
+    margin: 60px 0 40px; /* Margin lebih besar */
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700; /* Lebih tebal */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; /* Lebih lebar */
+    height: 4px; /* Lebih tebal */
+    background-color: #00d0e0; /* Warna biru kehijauan terang */
+    border-radius: 2px;
+}
+
+/* Car Grid Layout */
+.cars-overview-section {
+    padding: 50px 0; /* Padding vertikal lebih besar */
+    background-color: #1a1e28; /* Warna background sama dengan body */
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ukuran kartu mobil sedikit lebih besar */
+    gap: 30px;
+    padding: 0 40px; /* Padding agar ada ruang dari sisi kiri/kanan */
+}
+
+/* Car Card Styling */
+.car-card {
+    background-color: #2a303d; /* Warna background kartu mobil */
+    border-radius: 10px; /* Sudut lebih melengkung */
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #3d4554; /* Border lebih gelap */
+}
+
+.car-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.car-img-container {
+    width: 100%;
+    height: 200px; /* Tinggi gambar sedikit lebih besar */
+    overflow: hidden;
+    background-color: #000;
+    position: relative;
+}
+
+.car-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.car-card:hover .car-img-container img {
+    transform: scale(1.08);
+}
+
+.car-image-name {
+    position: absolute;
+    top: 15px; /* Posisi teks */
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.7); /* Background teks lebih gelap */
+    color: #fff;
+    padding: 8px 15px; /* Padding lebih besar */
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+
+/* Car Info Section */
+.car-info {
+    padding: 25px; /* Padding lebih besar */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Jarak antar elemen info */
+    justify-content: space-between;
+}
+
+.car-info h3 {
+    font-size: 26px; /* Ukuran font lebih besar */
+    margin: 0;
+    color: #00d0e0; /* Warna biru kehijauan untuk nama mobil */
+    text-align: left;
+    font-weight: 700;
+}
+
+/* Rating and Location */
+.car-rating-location {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #3d4554; /* Border lebih gelap */
+}
+
+.car-rating, .car-location {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antar ikon dan teks */
+    color: #ccc;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.car-rating i {
+    color: #ffd700;
+    font-size: 1.2em;
+}
+
+.car-location i {
+    color: #87ceeb;
+    font-size: 1.2em;
+}
+
+
+/* Specifications */
+.car-specs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #3d4554; /* Border lebih gelap */
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 1em;
+    color: #ccc;
+    text-align: center;
+    font-weight: 400;
+}
+
+.spec-item i {
+    font-size: 1.6em; /* Ikon lebih besar */
+    color: #00d0e0; /* Warna biru kehijauan */
+}
+
+/* Price and Booking Button */
+.car-price-booking {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; /* Jarak lebih besar */
+}
+
+.rent-price {
+    font-size: 12px; /* Ukuran font harga 12px */
+    font-weight: 700;
+    color: #f0f0f0;
+    margin: 0;
+    text-align: left;
+}
+
+.rent-price span {
+    color: #00d0e0; /* Warna biru kehijauan untuk harga */
+}
+
+.book-now-btn {
+    display: inline-block;
+    padding: 14px 30px; /* Padding tombol lebih besar */
+    background-color: #00d0e0; /* Warna biru kehijauan untuk tombol */
+    color: #1a1e28; /* Warna teks gelap */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.book-now-btn:hover {
+    background-color: #00aab5; /* Sedikit lebih gelap saat hover */
+    transform: translateY(-2px);
+}
+
+
+/* Hero Special Car Section */
+.hero-special-car {
+    width: 100%;
+    height: 450px;
+    background-image: url('../aset/RD.jpg'); /* Sesuaikan path gambar ini jika perlu */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 60px; /* Margin atas lebih besar */
+    border-radius: 10px; /* Sudut lebih melengkung */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.hero-special-car::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-special-car-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 70px; /* Font lebih besar */
+    color: #f0f0f0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    position: relative;
+}
+
+
+/* Facts in Numbers Section */
+.facts-in-numbers {
+    background-color: #2a303d; /* Background lebih gelap */
+    padding: 80px 0; /* Padding lebih besar */
+    text-align: center;
+    border-top: 1px solid #3d4554;
+    margin-top: 60px; /* Margin atas lebih besar */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Ukuran kolom sedikit lebih besar */
+    gap: 40px; /* Jarak antar fakta lebih besar */
+    max-width: 1200px; /* Lebar maksimal grid */
+    margin: 60px auto 0; /* Margin atas lebih besar */
+    padding: 0 40px; /* Padding horizontal */
+}
+
+.fact-item {
+    background-color: #1a1e28; /* Background item fakta */
+    padding: 40px 25px; /* Padding lebih besar */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #3d4554;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fact-item:hover {
+    transform: translateY(-8px); /* Efek hover lebih kentara */
+    background-color: #2a303d;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.fact-number {
+    font-size: 55px; /* Angka lebih besar */
+    font-weight: 700;
+    color: #00d0e0; /* Warna biru kehijauan */
+    display: block;
+    margin-bottom: 15px; /* Jarak dari teks */
+}
+
+.fact-text {
+    font-size: 20px; /* Teks lebih besar */
+    color: #f0f0f0;
+    font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .navbar-container {
+        padding: 0 25px;
+    }
+    .logo { /* **Ditambahkan/Diubah** */
+        left: 25px;
+    }
+    .user-profile { /* **Ditambahkan/Diubah** */
+        right: 25px;
+    }
+    .main-menu ul li {
+        margin: 0 20px; /* **Sesuaikan jarak menu untuk tablet** */
+    }
+    .hero-section {
+        height: 400px;
+    }
+    .hero-overlay h2 {
+        font-size: 55px;
+    }
+    .hero-overlay p {
+        font-size: 20px;
+    }
+    .brands, .vehicle-filters, .car-grid, .facts-grid {
+        padding: 0 25px;
+    }
+    .section-title {
+        font-size: 36px;
+    }
+    .hero-special-car-title {
+        font-size: 55px;
+    }
+    .car-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column; /* Kembali ke layout kolom untuk mobile */
+        justify-content: flex-start; /* Tidak perlu memusatkan secara keseluruhan lagi */
+        align-items: center;
+        padding: 15px 15px; /* Sesuaikan padding agar lebih nyaman */
+        height: auto; /* Izinkan tinggi menyesuaikan konten */
+    }
+    .logo {
+        position: static; /* Hilangkan posisi absolut */
+        transform: none;
+        margin-bottom: 15px; /* Beri jarak di bawah logo */
+    }
+    .main-menu {
+        flex-grow: 0; /* Tidak perlu mengisi ruang */
+        width: 100%; /* Ambil lebar penuh */
+        justify-content: center; /* Tetap pusatkan menu di tengah */
+        margin-bottom: 15px; /* Beri jarak di bawah menu */
+    }
+    .main-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .main-menu ul li {
+        margin: 0;
+    }
+    .user-profile {
+        position: static; /* Hilangkan posisi absolut */
+        transform: none;
+        flex-direction: row; /* Pertahankan baris untuk profil jika memungkinkan */
+        gap: 10px;
+        flex-wrap: wrap; /* Izinkan wrap jika terlalu panjang */
+        justify-content: center;
+        margin-top: 10px; /* Beri jarak di atas profil */
+    }
+    .user-greeting { /* **Ditambahkan** */
+        order: 1; /* Atur urutan agar lebih baik di mobile */
+    }
+    .booking-status-link { /* **Ditambahkan** */
+        order: 1; /* Atur urutan agar lebih baik di mobile */
+    }
+    .logout-btn { /* **Ditambahkan** */
+        order: 2;
+    }
+    .profile-circle { /* **Ditambahkan** */
+        order: 0; /* Atur urutan agar gambar profil di awal */
+    }
+    .brand-filter .brands {
+        padding: 0 15px;
+        gap: 30px;
+    }
+    .hero-section {
+        height: 350px;
+    }
+    .hero-overlay h2 {
+        font-size: 45px;
+    }
+    .hero-overlay p {
+        font-size: 18px;
+    }
+    .vehicle-group-selection h2 {
+        font-size: 30px;
+    }
+    .vehicle-filters {
+        padding: 0 15px;
+        gap: 10px;
+    }
+    .vehicle-filters .filter-button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    .section-title {
+        font-size: 30px;
+        margin: 40px 0 25px;
+    }
+    .car-grid {
+        padding: 0 15px;
+    }
+    .car-info h3 {
+        font-size: 22px;
+    }
+    .rent-price {
+        font-size: 12px; /* Ukuran font harga di tablet juga 12px */
+    }
+    .book-now-btn {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+    .hero-special-car {
+        height: 300px;
+    }
+    .hero-special-car-title {
+        font-size: 45px;
+    }
+    .facts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        padding: 0 15px;
+    }
+    .fact-number {
+        font-size: 40px;
+    }
+    .fact-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 30px;
+    }
+    .main-menu ul li a {
+        font-size: 14px;
+    }
+    .user-greeting, .booking-status-link {
+        font-size: 14px;
+    }
+    .logout-btn {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+    .navbar-container,
+    .brand-filter .brands,
+    .vehicle-filters,
+    .car-grid,
+    .facts-grid {
+        padding: 0 10px; /* Menjaga sedikit padding di mobile */
+    }
+    .hero-section {
+        height: 250px;
+    }
+    .hero-overlay h2 {
+        font-size: 35px;
+    }
+    .hero-overlay p {
+        font-size: 16px;
+    }
+    .brand-logo {
+        width: 70px;
+        height: 45px;
+    }
+    .vehicle-group-selection h2 {
+        font-size: 26px;
+    }
+    .vehicle-filters .filter-button {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+    }
+    .section-title {
+        font-size: 25px;
+        margin: 30px 0 20px;
+    }
+    .car-card {
+        padding: 15px;
+    }
+    .car-img-container {
+        height: 150px;
+    }
+    .car-info h3 {
+        font-size: 18px;
+    }
+    .rent-price {
+        font-size: 12px; /* Ukuran font harga di mobile juga 12px */
+    }
+    .book-now-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    .hero-special-car {
+        height: 250px;
+    }
+    .hero-special-car-title {
+        font-size: 30px;
+    }
+    .fact-item {
+        padding: 30px 15px;
+    }
+    .fact-number {
+        font-size: 35px;
+    }
+    .fact-text {
+        font-size: 15px;
+    }
+}

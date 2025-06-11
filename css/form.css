@@ -1,0 +1,134 @@
+/* Styling untuk keseluruhan halaman */
+html,
+body {
+    height: 100%;
+    margin: 0; /* Pastikan tidak ada margin default */
+    font-family: 'Poppins', sans-serif; /* Menggunakan font modern */
+    color: #333; /* Warna teks default */
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+body {
+    /* Latar belakang dengan efek paralaks atau gradasi */
+    background: linear-gradient(to bottom right, #5e72e4, #8860d0); /* Gradasi ungu-biru */
+    /* Atau jika tetap ingin gambar, tambahkan efek overlay di .imagebg */
+    /* background: url('/images/fb.jpg') no-repeat center center fixed; */
+    /* background-size: cover; */
+    
+    display: flex; /* Menggunakan flexbox untuk memposisikan konten di tengah */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Pastikan body mengambil tinggi viewport penuh */
+}
+
+/* Overlay latar belakang untuk memberikan kesan mendalam */
+.imagebg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Memberikan efek blur pada latar belakang jika ada gambar, atau hanya warna semi-transparan */
+    background-color: rgba(255, 255, 255, 0.1); /* Overlay putih sangat transparan */
+    backdrop-filter: blur(8px); /* Efek blur pada konten di belakangnya */
+    -webkit-backdrop-filter: blur(8px); /* Untuk kompatibilitas Safari */
+    z-index: -1; /* Pastikan di belakang konten utama */
+}
+
+/* Container utama untuk form */
+.form-container {
+    background-color: rgba(255, 255, 255, 0.95); /* Sedikit transparan agar latar belakang terlihat */
+    padding: 40px;
+    border-radius: 15px; /* Sudut lebih membulat */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Bayangan lebih halus dan mendalam */
+    width: 90%; /* Responsif */
+    max-width: 450px; /* Lebar maksimal */
+    text-align: center;
+    position: relative; /* Untuk z-index jika diperlukan */
+    z-index: 1;
+    transform: translateY(0); /* Posisi awal untuk animasi */
+    transition: transform 0.5s ease-out, box-shadow 0.3s ease-in-out; /* Animasi masuk */
+}
+
+.form-container:hover {
+    transform: translateY(-5px); /* Sedikit naik saat di-hover */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat di-hover */
+}
+
+/* Styling untuk judul atau elemen di dalam form container */
+.form-container h2 {
+    color: #4a4a4a;
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+/* Styling untuk input atau elemen form lainnya */
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
+    width: calc(100% - 20px); /* Kurangi padding */
+    padding: 12px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus,
+.form-container input[type="email"]:focus {
+    border-color: #5e72e4; /* Warna border saat fokus */
+    box-shadow: 0 0 0 3px rgba(94, 114, 228, 0.2); /* Efek glow saat fokus */
+}
+
+/* Styling untuk tombol */
+.btn {
+    display: inline-block; /* Agar bisa menerapkan padding dan margin */
+    margin-top: 20px;
+}
+
+.btn a {
+    background: linear-gradient(to right, #5e72e4, #8860d0); /* Gradasi warna tombol */
+    color: #fff; /* Warna teks tombol */
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease-in-out; /* Transisi untuk hover */
+    border: none; /* Hilangkan border default */
+    cursor: pointer; /* Ubah kursor menjadi pointer */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Bayangan tombol */
+}
+
+.btn a:hover {
+    transform: translateY(-3px); /* Sedikit naik saat di-hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat */
+    background: linear-gradient(to right, #4a5cb8, #714ca5); /* Gradasi sedikit lebih gelap */
+}
+
+.btn a:active {
+    transform: translateY(0); /* Kembali ke posisi semula saat diklik */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 30px;
+        max-width: 95%;
+    }
+
+    .form-container h2 {
+        font-size: 1.8em;
+    }
+
+    .btn a {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}

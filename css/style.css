@@ -1,0 +1,253 @@
+/* Reset dan Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Sembunyikan scrollbar jika konten melebihi viewport */
+}
+
+/* Main Container (Background Image) */
+.main {
+    width: 100%;
+    height: 100vh; /* Pastikan menutupi seluruh tinggi viewport */
+    background: url("../aset/JW.jpg") center center/cover no-repeat; /* Sesuaikan path gambar Anda */
+    display: flex;
+    flex-direction: column; /* Tetap flex-column untuk struktur utama */
+    position: relative;
+}
+
+/* Header (Top-left "Login" text) - DIHILANGKAN */
+/* .header { display: none; } */
+/* Atau hapus elemen <div class="header"> dari HTML */
+
+
+/* Main content wrapper for left-content and login-form-area */
+.content-wrapper {
+    display: flex; /* Mengatur left dan right content secara horizontal */
+    width: 100%;
+    height: 100%; /* Mengambil seluruh tinggi yang tersedia */
+    position: relative;
+    z-index: 1;
+    /* Tidak perlu overlay gelap di sini lagi, karena gambar latar belakang sekarang terang */
+}
+
+/* Overlay for the left side background - DIHILANGKAN */
+.content-wrapper::before {
+    content: none; /* Menghilangkan pseudo-element overlay */
+}
+
+/* Left Content Area */
+.left-content {
+    flex: 2; /* Mengambil proporsi lebih besar (misal 60-65%) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Pusatkan konten secara vertikal */
+    align-items: flex-start; /* Sejajarkan teks ke kiri */
+    padding: 0 80px; /* Sesuaikan padding untuk jarak dari tepi */
+    color: white; /* Warna teks putih agar kontras dengan background gelap */
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    /* Latar belakang kiri akan langsung terlihat dari .main */
+}
+
+.left-logo-title {
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    /* Sesuaikan warna teks jika background lebih terang */
+    color: #00bcd4; /* Warna teal dari tombol */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Tetap pakai shadow agar terbaca di area gelap */
+}
+
+.description-text,
+.instruction-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    max-width: 500px;
+    /* Sesuaikan warna teks jika background lebih terang */
+    color: white; /* Tetap putih agar kontras di area gelap gambar */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.instruction-text {
+    font-weight: bold;
+}
+
+/* Right Login Form Area */
+.login-form-area {
+    flex: 1; /* Mengambil proporsi lebih kecil (misal 35-40%) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Pusatkan form dan judul secara vertikal */
+    align-items: center; /* Pusatkan konten horizontal */
+    padding: 20px; /* Padding di sekitar area form */
+    position: relative;
+    z-index: 1;
+    /* Latar belakang kanan yang terang */
+    background-color: rgba(255, 255, 255, 0.8); /* Background putih semi-transparan yang lebih solid */
+    backdrop-filter: blur(10px); /* Efek blur yang lebih jelas */
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.form-area-title {
+    /* RENT N RIDE di atas form */
+    color: #555; /* Warna abu-abu terang */
+    font-size: 38px; /* Sedikit lebih besar dari sebelumnya */
+    font-weight: bold;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-shadow: none; /* Hilangkan shadow karena background cerah */
+}
+
+/* Form Box (The Frosted Glass Panel) - sekarang lebih terintegrasi dengan login-form-area */
+.form-box {
+    background-color: transparent; /* Background transparant karena sudah di handle login-form-area */
+    backdrop-filter: none; /* Backdrop filter sudah di handle login-form-area */
+    -webkit-backdrop-filter: none;
+    border-radius: 15px;
+    padding: 0; /* Padding di dalam form-box sekarang minimal */
+    width: 350px; /* Lebar card, sesuaikan */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: none; /* Hilangkan shadow dari form-box, jika ada */
+    border: none; /* Hilangkan border dari form-box */
+}
+
+/* Input Fields */
+.form-box input {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    background-color: white; /* Input field putih solid */
+    border: 1px solid #ddd; /* Border tipis */
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sedikit bayangan pada input */
+}
+
+/* Placeholder Text */
+.form-box input::placeholder {
+    color: #888; /* Warna placeholder */
+}
+
+/* Social Icons Container */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+/* Social Icon Images */
+.social-icons a img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #eee; /* Background abu-abu terang untuk icon */
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #00bcd4; /* Warna teal */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px; /* Jarak bawah dari teks "Don't Have Account" */
+}
+
+.login-btn:hover {
+    background-color: #00aabf; /* Warna teal lebih gelap saat hover */
+}
+
+/* "Don't Have Account" text and link */
+.dont-have-account {
+    color: #555; /* Warna teks abu-abu */
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 1.5; /* Jarak baris untuk "Don't have an account? Sign up here" */
+}
+
+.dont-have-account a {
+    color: #00bcd4; /* Warna link teal */
+    text-decoration: none; /* Hilangkan underline */
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.dont-have-account a:hover {
+    text-decoration: underline;
+}
+
+/* Admin Link (dibawah card login) */
+.admin-link {
+    /* Posisikan di bawah card login, dalam login-form-area */
+    margin-top: 20px; /* Jarak dari card login */
+    color: #555; /* Warna teks abu-abu */
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-shadow: none; /* Hilangkan shadow */
+    z-index: 2; /* Pastikan di atas elemen lain */
+}
+
+.admin-link a {
+    color: #00bcd4; /* Warna link teal */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.admin-link a:hover {
+    text-decoration: underline;
+}
+
+.admin-link img {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    background-color: transparent; /* Icon admin di gambar tidak memiliki background warna solid */
+    border-radius: 0; /* Tidak bulat */
+    padding: 0;
+}
+
+/* Optional: Background animation */
+@keyframes infiniteScrollBg {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.main.animated {
+    animation: infiniteScrollBg 50s linear infinite;
+}

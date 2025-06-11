@@ -1,0 +1,549 @@
+body { /* Mengatur background utama halaman dengan gradasi */
+    background: linear-gradient(to bottom, #1a1e28, #2a303d); /* Gradasi dari gelap ke sedang */
+    min-height: 100vh; /* Memastikan gradasi mengisi seluruh tinggi viewport */
+    margin: 0; /* Menghilangkan margin default body */
+    display: flex;
+    flex-direction: column;
+}
+
+#navbar {
+    width: 100%;
+    background-color: #1a1e28; /* Tetap satu warna solid untuk navbar agar lebih rapi */
+    opacity: 1;
+}
+
+#tab {
+    color: #00d0e0; /* Warna biru terang untuk teks tab */
+    font-size: 18px;
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #1a1e28;
+}
+
+#tab:hover {
+    color: #2a303d;
+    transition: all 0.15s ease-in-out;
+}
+
+#logo {
+    margin-top: -10px;
+    height: 80px;
+    width: 240px;
+    overflow: visible;
+    background-color: #1a1e28;
+    padding: 10px;
+    border: 1.5px solid #00d0e0;
+}
+
+#image {
+    animation-duration: 2s;
+    animation-name: text;
+    box-shadow: 0 0 10px #2a303d;
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#image:hover {
+    animation-duration: 2s;
+    animation-name: text;
+    box-shadow: 0 0 20px #2a303d;
+}
+
+@keyframes text {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+    100% {}
+}
+
+#one {
+    animation-duration: 1s;
+    animation-name: one;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+    margin-left: 0px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px #2a303d;
+}
+
+#one:hover {
+    box-shadow: 0 0 15px #2a303d;
+}
+
+@keyframes one {
+    0% {
+        margin-top: -400px;
+        opacity: 0;
+    }
+    100% {
+        margin-top: px;
+    }
+}
+
+#two {
+    animation: text 1.2s;
+    overflow: hidden;
+    animation-name: two;
+    height: 200px;
+    width: 200px;
+    margin-left: 10px;
+    box-shadow: 0 0 10px #2a303d;
+    margin-top: 20px;
+}
+
+#two:hover {
+    box-shadow: 0 0 15px #2a303d;
+}
+
+@keyframes two {
+    0% {
+        margin-top: -800px;
+        opacity: 0;
+    }
+    50% {
+        margin-top: -800px;
+        opacity: 0;
+    }
+    100% {
+        margin-top: -px;
+    }
+}
+
+#three {
+    animation-name: three;
+    animation-duration: 1.6s;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+    margin-left: 10px;
+    box-shadow: 0 0 10px #2a303d;
+    margin-top: 20px;
+}
+
+#three:hover {
+    box-shadow: 0 0 15px #2a303d;
+}
+
+@keyframes three {
+    0% {
+        margin-top: -400px;
+        opacity: 0;
+    }
+    35% {
+        margin-top: -400px;
+        opacity: 0;
+    }
+    70% {
+        margin-top: -400px;
+        opacity: 0;
+    }
+}
+
+#four {
+    animation-duration: 2s;
+    animation-name: four;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+    margin-left: 0px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px #2a303d;
+}
+
+#four:hover {
+    box-shadow: 0 0 15px #2a303d;
+}
+
+@keyframes four {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        margin-top: px;
+    }
+}
+
+#five {
+    animation-duration: 2.2s;
+    overflow: hidden;
+    animation-name: five;
+    height: 200px;
+    width: 200px;
+    margin-left: 10px;
+    box-shadow: 0 0 10px #2a303d;
+    margin-top: 20px;
+}
+
+#five:hover {
+    box-shadow: 0 0 15px #2a303d;
+}
+
+@keyframes five {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        margin-top: px;
+    }
+}
+
+#six {
+    animation-name: six;
+    animation-duration: 2.4s;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+    margin-left: 10px;
+    box-shadow: 0 0 10px #2a303d;
+    margin-top: 20px;
+}
+
+#six:hover {
+    box-shadow: 0 0 15px #2a303d;
+}
+
+@keyframes six {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 0;
+    }
+    100% {}
+}
+
+.box {
+    width: 250px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.box .box-img {
+    transform: rotateY(0);
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.box:hover .box-img {
+    transform: rotateY(-180deg);
+}
+
+.box .box-img img {
+    width: 100%;
+    height: auto;
+    animation-name: pics;
+    animation-duration: 1s;
+    transition: all 0.5s ease-in-out 0s
+}
+
+@keyframes pics {
+    0% {
+        opacity: 0;
+        transition: all 0.5s ease-in-out 0s;
+    }
+    100% {}
+}
+
+.box .box-content {
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 40px 20px;
+    text-align: center;
+    font-weight: 700px;
+    color: #FFF;
+    background: #00d0e0;
+    opacity: .9;
+    transform: rotateY(90deg);
+    transition: all 0.5s ease-in-out 0s;
+    overflow: hidden;
+}
+
+.box:hover .box-content {
+    margin-left: 250px;
+    overflow: hidden;
+    transform: rotateY(0);
+}
+
+#tr1:hover .box-img {
+    transform: rotateY(-180deg);
+}
+
+#tr1:hover .box-content {
+    margin-left: 250px;
+    overflow: hidden;
+    transform: rotateY(0);
+}
+
+.Specie {
+    margin-top: 31%;
+    text-align: center;
+    font-size: 20px;
+    font-family: calibri;
+    color: #00d0e0; /* Teks cerah agar terbaca di background gelap */
+    box-shadow: 0 0 5px #1a1e28;
+    padding: 5px;
+    background-color: #2a303d;
+    opacity: .9;
+}
+
+.Name {
+    margin-top: 28%;
+    text-align: center;
+    font-size: 20px;
+    font-family: calibri;
+    color: #00d0e0; /* Teks cerah agar terbaca di background gelap */
+    box-shadow: 0 0 5px #1a1e28;
+    padding: 5px;
+    background-color: #2a303d;
+    opacity: .9;
+}
+
+.footer {
+    height: auto;
+    padding: 0px;
+    background-color: #00d0e0;
+    font-family: sans-ser;
+}
+
+#links {
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    overflow: hidden;
+    text-align: center;
+    text-shadow: 0 0 5px #1a1e28;
+}
+
+#links:hover {
+    text-shadow: 0 0 0px #1a1e28;
+}
+
+/* Asumsi "Go to Home" adalah bagian dari #links atau elemen serupa di footer.
+   Jika ada ID/class khusus untuk "Go to Home", beri tahu saya. */
+
+.footer input {
+    height: 34px;
+    width: 65%;
+    background-color: #fff;
+    color: #1a1e28;
+    font-family: arial;
+    margin: auto;
+}
+
+.footer button {
+    font-family: arial;
+    text-shadow: 0 0 5px #1a1e28;
+    margin-top: 5px;
+}
+
+.footer .fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 55px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.footer .fa:hover {
+    border-radius: 1px solid #fff;
+}
+
+.footer .fa-facebook {
+    color: white;
+    text-shadow: 0 0 9px #1a1e28;
+}
+
+.footer .fa-facebook:hover {
+    background: #3B5998;
+    color: white;
+}
+
+.footer .fa-twitter {
+    color: white;
+    text-shadow: 0 0 10px #1a1e28;
+}
+
+.footer .fa-twitter:hover {
+    background: #55ACEE;
+    color: white;
+}
+
+.footer .fa-linkedin {
+    color: white;
+    text-shadow: 0 0 9px #1a1e28;
+}
+
+.footer .fa-linkedin:hover {
+    background: #007bb5;
+    color: white;
+}
+
+.footer .fa-youtube {
+    color: white;
+    text-shadow: 0 0 10px #1a1e28;
+}
+
+.footer .fa-youtube:hover {
+    background: #bb0000;
+    color: white;
+}
+
+.footer .fa-pinterest {
+    color: white;
+    text-shadow: 0 0 9px #1a1e28;
+}
+
+.footer .fa-pinterest:hover {
+    background: #cb2027;
+    color: white;
+}
+
+#bottom-line {
+    height: 1px;
+    background-color: #2a303d;
+}
+
+#form {
+    margin-top: 100px;
+}
+
+#mainform {
+    background: linear-gradient(to right, #1a1e28, #2a303d); /* Gradasi pada form */
+    border: px solid #2a303d;
+    padding: 20px;
+    height: auto;
+    opacity: .9; /* Sedikit lebih opaque agar gradasi terlihat */
+    animation-name: form;
+    animation-duration: 1s;
+    transition: ease-in-out .3s;
+    color: #fff; /* Teks di dalam form jadi putih */
+}
+
+@keyframes form {
+    0% {
+        opacity: 0;
+    }
+    100% {}
+}
+
+#mainform:hover {
+    box-shadow: 0 0 20px #2a303d;
+    opacity: 1;
+}
+
+#btn {
+    width: 100%;
+    background-color: #00d0e0;
+    color: #1a1e28; /* Warna teks button jadi gelap */
+    font-weight: bold;
+}
+
+/* Menambahkan kelas untuk teks "Feedback" agar dominan dan cerah */
+.feedback-text {
+    color: #00d0e0; /* Warna biru terang dominan */
+    font-size: 2.5em; /* Ukuran font lebih besar */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Tambah shadow agar lebih menonjol */
+}
+
+.fa {
+    padding: 10px;
+    font-size: 60px;
+    width: 55px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    border-radius: 1px solid #fff;
+}
+
+.fa-facebook {
+    color: white;
+    text-shadow: 0 0 5px #1a1e28;
+}
+
+.fa-facebook:hover {
+    background: #3B5998;
+    color: white;
+    text-decoration: none;
+}
+
+.fa-twitter {
+    color: white;
+    text-shadow: 0 0 5px #1a1e28;
+}
+
+.fa-twitter:hover {
+    background: #55ACEE;
+    color: white;
+    text-decoration: none;
+}
+
+.fa-youtube {
+    color: white;
+    text-shadow: 0 0 5px #1a1e28;
+}
+
+.fa-youtube:hover {
+    background: #bb0000;
+    color: white;
+}
+
+#mail {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+#mail:hover {
+    box-shadow: 0 0 2px #1a1e28;
+}
+
+#phone {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+#phone:hover {
+    box-shadow: 0 0 2px #1a1e28;
+}
+
+#map {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+#map:hover {
+    box-shadow: 0 0 2px #1a1e28;
+}
+
+.contact-us {
+    animation-name: contact-us;
+    animation-duration: 1s;
+    margin-left: x;
+}
+
+@keyframes contact-us {
+    0% {
+        margin-left: -400px;
+    }
+    100% {}
+}
